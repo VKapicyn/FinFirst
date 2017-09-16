@@ -4,8 +4,10 @@
 
 ### Get starting
 * Установить [NodeJS](https://nodejs.org/en/download/)
+* Установить [MongoDB](https://www.mongodb.com/)
 * Из папки с проектом
 ```sh
+$ mongod
 $ npm install
 $ npm start
 ```
@@ -16,4 +18,3 @@ _Все изменения в коде сразу подгружаются в б
 ### Клиент
 Android:
 * https://github.com/Femax/FinFirstAndroid 
-
