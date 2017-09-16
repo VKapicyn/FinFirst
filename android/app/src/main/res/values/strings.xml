@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">opengifityhack</string>
+
+
+    <!--LoginActivity Fields-->
+    <string name="login_password_hint">Пароль</string>
+    <string name="login_user_name_hint">Логин</string>
+    <string name="guest_login_button_text">ГОСТЕВОЙ ВХОД</string>
+    <string name="register_button_text">РЕГИСТРАЦИЯ</string>
+    <string name="login_action_button">ВХОД</string>
+
+    <!--LoginActivity Messages-->
+    <string name="login_empty_fields_message">Поля пароль и логин не должны быть пустыми</string>
+    <string name="error_field_required">Поле  логин не должно быть пустым</string>
+    <string name="error_invalid_password">поле пароль не должно быть пустым</string>
+    <string name="start_text_guest_login">Привет, я робот-советник./n Чтобы составить Ваш первый инвестиционный портфель, необходимо узнать о Вас немного информации :)</string>
+    <string name="how_much_old_are_u">Сколько Вам лет?</string>
+    <string name="what_is_your_name">Как Вас зовут?</string>
+    <string name="name_edit_text_hint">Имя</string>
+    <string name="age_edit_text_hint">Возраст</string>
+    <string name="send_age_name_button">Отправить</string>
+
+
+</resources>
