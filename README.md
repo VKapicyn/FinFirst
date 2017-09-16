@@ -1,0 +1,2 @@
+# FinFirst
+For hackaton
