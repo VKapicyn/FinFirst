@@ -1,19 +1,21 @@
 let mongoose = require('./../app.js').mongoose;
 
+
 let userSchema = new mongoose.Schema({
     imei: String,
     name: String,
     age: Number,
 
     portfels: [{
-        type: Boolean, //demo=false, real=true
-        name: String,
-        stratDate: Date,
+        accountType: Boolean, //demo=false, real=true
+        portfelName: String,
+        risk: Number,
+        startDate: Date,
         startBalance: Number,
         realBalance: Number,
         currency: String,
         tickers: [{
-            type: String,
+            tickerType: String,
             ticker: String,
             procent: Number
         }],
@@ -25,8 +27,10 @@ let userSchema = new mongoose.Schema({
     }]
 });
 
+
 let userModel = mongoose.model('user', userSchema);
 module.exports.userModel = userModel;
+
 
 exports.getUser = (req, res) => {
     if (req.params.imei != undefined)
@@ -43,12 +47,19 @@ exports.getUser = (req, res) => {
         });
 }
 
-exports.setUser = (req, res) => {
-    let user = new userModel();
-    
-    user.imei = req.body.imei;
-    user.name = req.body.name;
-    user.age = req.body.age;
 
-    res.send(user.save());
+exports.setUser = (req, res) => {
+    userModel.findOne({imei:req.body.imei}).then(user => {
+        if (user == null){
+            let user = new userModel();
+            
+            user.imei = req.body.imei;
+            user.name = req.body.name;
+            user.age = req.body.age;
+        
+            res.send(user.save());
+        }
+        else
+            res.send(user);
+    });
 }
