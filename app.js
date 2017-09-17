@@ -18,4 +18,10 @@ app.use('/api', require('./router'));
 app.listen(require('./config.js').port);
 
 
+setTimeout(function run() {
+    setTimeout(run, 43200000);
+    require('./models/dataModel').updateData('usd');
+},10);
+
+
 console.log('Server started!');

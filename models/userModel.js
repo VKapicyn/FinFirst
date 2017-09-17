@@ -5,7 +5,6 @@ let userSchema = new mongoose.Schema({
     name: String,
     age: Number,
 
-    //TOFIX
     portfels: [{
         type: Boolean, //demo=false, real=true
         name: String,
@@ -13,9 +12,16 @@ let userSchema = new mongoose.Schema({
         startBalance: Number,
         realBalance: Number,
         currency: String,
-        bonds: [String],
-        stocks: [String],
-        prices: [Number]
+        tickers: [{
+            type: String,
+            ticker: String,
+            procent: Number
+        }],
+        prices: [{
+            date: Date,
+            price: Number
+        }],
+        operations: [String]
     }]
 });
 
@@ -32,7 +38,7 @@ exports.getUser = (req, res) => {
             });
         });
     else
-        userModel.findOne({id:req.params.userId}).then((user) => {
+        userModel.findOne({_id:req.params.userId}).then((user) => {
             res.json(user.imei);
         });
 }
