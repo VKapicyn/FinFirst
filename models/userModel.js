@@ -32,7 +32,7 @@ exports.getUser = (req, res) => {
     if (req.params.imei != undefined)
         userModel.findOne({imei:req.params.imei}).then((user) => {
             res.json({
-                id: user.id,
+                id: user._id,
                 name: user.name,
                 age: user.age
             });
